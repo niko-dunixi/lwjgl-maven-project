@@ -73,7 +73,7 @@ public class Main implements AutoCloseable {
 
     private void loop() {
         GL.createCapabilities();
-        glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+        glClearColor(0.0f, 0.0f, 0.2f, 0.0f);
         while (!glfwWindowShouldClose(windowHandle)) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             glfwSwapBuffers(windowHandle);
