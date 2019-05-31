@@ -12,7 +12,6 @@
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
         <lwjgl.version>3.2.2</lwjgl.version>
-        <lwjgl.classifier>natives-macos</lwjgl.classifier>
     </properties>
 
     <dependencies>
@@ -46,40 +45,42 @@
         </dependency>
     </dependencies>
 
-    <!--    <profiles>-->
-    <!--        <profile>-->
-    <!--            <id>windows</id>-->
-    <!--            <activation>-->
-    <!--                <os>-->
-    <!--                    <name>windows</name>-->
-    <!--                </os>-->
-    <!--            </activation>-->
-    <!--            <properties>-->
-    <!--                <lwjgl.classifier>natives-macos</lwjgl.classifier>-->
-    <!--            </properties>-->
-    <!--        </profile>-->
-    <!--        <profile>-->
-    <!--            <id>mac</id>-->
-    <!--            <activation>-->
-    <!--                <os>-->
-    <!--                    <name>osx</name>-->
-    <!--                </os>-->
-    <!--            </activation>-->
-    <!--            <properties>-->
-    <!--                <lwjgl.classifier>natives-macos</lwjgl.classifier>-->
-    <!--            </properties>-->
-    <!--        </profile>-->
-    <!--        <profile>-->
-    <!--            <id>linux</id>-->
-    <!--            <activation>-->
-    <!--                <os>-->
-    <!--                    <name>Linux</name>-->
-    <!--                </os>-->
-    <!--            </activation>-->
-    <!--            <properties>-->
-    <!--                <lwjgl.classifier>natives-linux</lwjgl.classifier>-->
-    <!--            </properties>-->
-    <!--        </profile>-->
-    <!--    </profiles>-->
+    <profiles>
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <name>windows</name>
+                </os>
+            </activation>
+            <properties>
+                <lwjgl.classifier>natives-macos</lwjgl.classifier>
+            </properties>
+        </profile>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                    <name>mac os x</name>
+                </os>
+            </activation>
+            <properties>
+                <lwjgl.classifier>natives-macos</lwjgl.classifier>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                    <name>!mac os x</name>
+                </os>
+            </activation>
+            <properties>
+                <lwjgl.classifier>natives-linux</lwjgl.classifier>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
