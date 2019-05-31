@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -8,5 +8,78 @@
     <artifactId>lwjgl-start</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+        <lwjgl.version>3.2.2</lwjgl.version>
+        <lwjgl.classifier>natives-macos</lwjgl.classifier>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl</artifactId>
+            <version>${lwjgl.version}</version>
+            <classifier>${lwjgl.classifier}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-opengl</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-opengl</artifactId>
+            <version>${lwjgl.version}</version>
+            <classifier>${lwjgl.classifier}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-glfw</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-glfw</artifactId>
+            <version>${lwjgl.version}</version>
+            <classifier>${lwjgl.classifier}</classifier>
+        </dependency>
+    </dependencies>
+
+    <!--    <profiles>-->
+    <!--        <profile>-->
+    <!--            <id>windows</id>-->
+    <!--            <activation>-->
+    <!--                <os>-->
+    <!--                    <name>windows</name>-->
+    <!--                </os>-->
+    <!--            </activation>-->
+    <!--            <properties>-->
+    <!--                <lwjgl.classifier>natives-macos</lwjgl.classifier>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            <id>mac</id>-->
+    <!--            <activation>-->
+    <!--                <os>-->
+    <!--                    <name>osx</name>-->
+    <!--                </os>-->
+    <!--            </activation>-->
+    <!--            <properties>-->
+    <!--                <lwjgl.classifier>natives-macos</lwjgl.classifier>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            <id>linux</id>-->
+    <!--            <activation>-->
+    <!--                <os>-->
+    <!--                    <name>Linux</name>-->
+    <!--                </os>-->
+    <!--            </activation>-->
+    <!--            <properties>-->
+    <!--                <lwjgl.classifier>natives-linux</lwjgl.classifier>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--    </profiles>-->
 
 </project>
